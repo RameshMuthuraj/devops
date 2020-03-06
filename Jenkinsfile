@@ -1,11 +1,5 @@
 pipeline {
-  agent {
-    docker {
-      image 'jenkins/slave'
-      args 'docker run -i --rm --name agent --init jenkins/slave java -jar /usr/share/jenkins/agent.jar'
-    }
-
-  }
+  agent any
   stages {
     stage('test') {
       steps {
